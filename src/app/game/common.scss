@@ -1,25 +1,26 @@
+$cellSize: 35px;
 .cells{
 	box-sizing: border-box;
-	width: 300px;
-	height: 300px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	width: $cellSize * 10;
+	height: $cellSize * 10;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
 	&.ships {
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 8;
+		& .ship.animate {
+			transition: all .2s;
+		}
 		& .ship-1 {
-			width: 60px;
-			height: 30px;
-			background-color: blue;
+			height: $cellSize * 3;
+			width: $cellSize;
+			background-image: url('/assets/imgs/ship-3.png');
 			box-sizing: border-box;
 			position: absolute;
 		}
 	}
-	game-cell {
-		width: 30px;
-		height: 30px;
-	}
+
 }

@@ -2,5 +2,5 @@
 	<game-cell *ngFor="let cell of cells" [state]="cell.state"></game-cell>
 </div>
 <div class="cells ships">
-	<div class="ship-1" cdkDragBoundary=".cells.ships" cdkDrag></div>
+	<div #ship="cdkDrag" class="ship ship-1" cdkDragBoundary=".cells.ships" cdkDrag (cdkDragEnded)="nearCell(ship)"></div>
 </div>
