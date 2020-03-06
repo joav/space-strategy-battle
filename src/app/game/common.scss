@@ -1,4 +1,5 @@
 $cellSize: 35px;
+$cellSize2: 17.5px;
 .cells{
 	box-sizing: border-box;
 	width: $cellSize * 10;
@@ -6,20 +7,64 @@ $cellSize: 35px;
 	display: grid;
 	grid-template-columns: repeat(10, 1fr);
 	grid-template-rows: repeat(10, 1fr);
+	&:not(.ships){
+		background-image: url('/assets/background-1.jpg');
+	}
 	&.ships {
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 8;
-		& .ship.animate {
-			transition: all .2s;
-		}
-		& .ship-1 {
-			height: $cellSize * 3;
-			width: $cellSize;
-			background-image: url('/assets/imgs/ship-3.png');
+		& .ship {
+			position: relative;
 			box-sizing: border-box;
-			position: absolute;
+			overflow: hidden;
+			&.animate {
+				transition: all .2s;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+			&.r-90::before {
+				transform: rotate(90deg);
+			}
+			&.r-180::before {
+				transform: rotate(180deg);
+			}
+			&.r-270::before {
+				transform: rotate(270deg);
+			}
+			&.ship-1 {
+				height: $cellSize;
+				width: $cellSize;
+				&::before {
+					width: $cellSize;
+					height: $cellSize;
+					background: url('/assets/imgs/ship-1.png') 0 0 no-repeat;
+				}
+			}
+			&.ship-2 {
+				height: $cellSize * 2;
+				width: $cellSize;
+				&::before {
+					background: url('/assets/imgs/ship-2.png') 0 0 no-repeat;
+				}
+				&.r-90, &.r-270{
+					width: $cellSize * 2;
+					height: $cellSize;
+					&::before {
+						height: $cellSize * 2;
+						width: $cellSize;
+						top: -$cellSize2;
+						left: $cellSize2;
+					}
+				}
+			}
 		}
 	}
 

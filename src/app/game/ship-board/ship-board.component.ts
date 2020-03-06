@@ -12,6 +12,9 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
 export class ShipBoardComponent {
 	cells:Cell[] = [];
 
+	r = 0;
+	lastDragging = false;
+
 	constructor() {
 		this.cells = Array<Cell>(CELLS * CELLS).fill({
 			column: 0,
@@ -20,13 +23,32 @@ export class ShipBoardComponent {
 		}).map<Cell>((c, i)=>indexToCell(i));
 	}
 	nearCell(ship:CdkDrag){
-		const regex = /translate3d\((\d+)px, (\d+)px, (\d+)px\)/;
-		const match = regex.exec(ship.element.nativeElement.style.transform);
-		const [x,y] = [Math.round(+match[1] / CELLSIZE) * CELLSIZE, Math.round(+match[2] / CELLSIZE) * CELLSIZE];
+		this.lastDragging = true;
+		const pos = ship._dragRef.getFreeDragPosition();
+		const [x,y] = [Math.round(+pos.x / CELLSIZE) * CELLSIZE, Math.round(+pos.y / CELLSIZE) * CELLSIZE];
 		ship.element.nativeElement.classList.add('animate');
 		ship._dragRef.setFreeDragPosition({x, y});
 		setTimeout(() => {
 			ship.element.nativeElement.classList.remove('animate');
 		}, 205);
+	}
+	rot(ship:CdkDrag){
+		if(!this.lastDragging){
+			this.r = (this.r + 90) % 360;
+			const pos = ship._dragRef.getFreeDragPosition();
+			if(this.r == 0){
+				const [x,y] = [(Math.round(+pos.x / CELLSIZE) * CELLSIZE) + CELLSIZE, (Math.round(+pos.y / CELLSIZE) * CELLSIZE) - CELLSIZE];
+				ship._dragRef.setFreeDragPosition({x, y});
+			}
+			if(this.r == 90){
+				const [x,y] = [Math.round(+pos.x / CELLSIZE) * CELLSIZE, (Math.round(+pos.y / CELLSIZE) * CELLSIZE) + CELLSIZE];
+				ship._dragRef.setFreeDragPosition({x, y});
+			}
+			if(this.r == 270){
+				const [x,y] = [(Math.round(+pos.x / CELLSIZE) * CELLSIZE) - CELLSIZE, (Math.round(+pos.y / CELLSIZE) * CELLSIZE)];
+				ship._dragRef.setFreeDragPosition({x, y});
+			}
+		}
+		this.lastDragging = false;
 	}
 }
