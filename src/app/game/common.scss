@@ -8,7 +8,7 @@ $cellSize2: 17.5px;
 	grid-template-columns: repeat(10, 1fr);
 	grid-template-rows: repeat(10, 1fr);
 	&:not(.ships){
-		background-image: url('/assets/background-1.jpg');
+		background-image: url('/assets/imgs/background-1.jpg');
 	}
 	&.ships {
 		position: absolute;
