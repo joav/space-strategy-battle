@@ -22,4 +22,8 @@ export class Miner extends ShipBase implements Ship {
 			DOMCoordToCell(this.position)
 		];
 	}
+
+	shouldCorrectPos(){
+		return false;
+	}
 }

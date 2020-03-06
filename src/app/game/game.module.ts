@@ -7,13 +7,15 @@ import { ActionBoardComponent } from './action-board/action-board.component';
 import { CellComponent } from './cell/cell.component';
 import { GameService } from './game.service';
 import { ShipBoardComponent } from './ship-board/ship-board.component';
+import { ShipComponent } from './ship/ship.component';
 
 @NgModule({
 	declarations: [
 		BoardComponent,
 		CellComponent,
 		ActionBoardComponent,
-		ShipBoardComponent
+		ShipBoardComponent,
+		ShipComponent
 	],
 	imports: [
 		CommonModule,

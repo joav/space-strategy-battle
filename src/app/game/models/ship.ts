@@ -5,4 +5,5 @@ export interface Ship extends ShipBase {
 	canRotate():boolean;
 	getCells():Cell[];
 	getPrimaryCell():Cell;
+	shouldCorrectPos():boolean;
 }

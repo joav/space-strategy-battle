@@ -1,0 +1,1 @@
+<div #shipDrag="cdkDrag" class="ship ship-{{ship.type}} r-{{ship.orientation}}" (click)="rot(shipDrag)" cdkDragBoundary=".cells.ships" cdkDrag (cdkDragEnded)="nearCell(shipDrag)"></div>

@@ -6,6 +6,15 @@ export class ShipBase {
 	rotate() {
 		this.orientation = (this.orientation + 90) % 360;
 	}
+
+	setPosition(pos:{x:number;y:number}){
+		this.position.left = pos.x;
+		this.position.top = pos.y;
+	}
+
+	correctPos() {
+		return {x: 0, y:0};
+	}
 }
 
 export type ShipType = '1'|'2'|'3'|'4';
