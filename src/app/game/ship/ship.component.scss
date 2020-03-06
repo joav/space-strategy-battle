@@ -49,4 +49,21 @@
 			}
 		}
 	}
+	&.ship-3 {
+		height: $cellSize * 3;
+		width: $cellSize;
+		&::before {
+			background: url('/assets/imgs/ship-3.png') 0 0 no-repeat;
+		}
+		&.r-90, &.r-270{
+			width: $cellSize * 3;
+			height: $cellSize;
+			&::before {
+				height: $cellSize * 3;
+				width: $cellSize;
+				top: -$cellSize;
+				left: $cellSize;
+			}
+		}
+	}
 }

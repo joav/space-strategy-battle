@@ -28,13 +28,13 @@ export class ShipComplex extends ShipBase implements Ship {
 	correctPos(){
 		let x = 0, y = 0;
 		if(this.orientation == 0){
-			[x,y] = [(Math.round(+this.position.left / CELLSIZE) * CELLSIZE) + CELLSIZE, (Math.round(+this.position.top / CELLSIZE) * CELLSIZE) - CELLSIZE];
+			[x,y] = [(Math.round(+this.position.left / CELLSIZE) * CELLSIZE) + (CELLSIZE * (this.parts - 1)), (Math.round(+this.position.top / CELLSIZE) * CELLSIZE) - (CELLSIZE * (this.parts - 1))];
 		}
 		if(this.orientation == 90){
-			[x,y] = [Math.round(+this.position.left / CELLSIZE) * CELLSIZE, (Math.round(+this.position.top / CELLSIZE) * CELLSIZE) + CELLSIZE];
+			[x,y] = [Math.round(+this.position.left / CELLSIZE) * CELLSIZE, (Math.round(+this.position.top / CELLSIZE) * CELLSIZE) + (CELLSIZE * (this.parts - 1))];
 		}
 		if(this.orientation == 270){
-			[x,y] = [(Math.round(+this.position.left / CELLSIZE) * CELLSIZE) - CELLSIZE, (Math.round(+this.position.top / CELLSIZE) * CELLSIZE)];
+			[x,y] = [(Math.round(+this.position.left / CELLSIZE) * CELLSIZE) - (CELLSIZE * (this.parts - 1)), (Math.round(+this.position.top / CELLSIZE) * CELLSIZE)];
 		}
 		return {x,y};
 	}

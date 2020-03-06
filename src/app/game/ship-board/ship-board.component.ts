@@ -15,8 +15,8 @@ export class ShipBoardComponent {
 
 	ships:Ship[] = [
 		// ShipFactory.create('4', {left: 0, top: 0}, 0),
-		// ShipFactory.create('3', {left: CELLSIZE, top: 0}, 0),
-		// ShipFactory.create('3', {left: CELLSIZE * 2, top: 0}, 0),
+		ShipFactory.create('3', {left: CELLSIZE, top: 0}, 0),
+		ShipFactory.create('3', {left: CELLSIZE * 2, top: 0}, 0),
 		ShipFactory.create('2', {left: CELLSIZE * 3, top: 0}, 0),
 		ShipFactory.create('2', {left: CELLSIZE * 4, top: 0}, 0),
 		ShipFactory.create('2', {left: CELLSIZE * 5, top: 0}, 0),
