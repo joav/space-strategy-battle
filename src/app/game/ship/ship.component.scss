@@ -3,6 +3,9 @@
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;
+	&.active {
+		z-index: 10;
+	}
 	&.animate {
 		transition: all .2s;
 	}
@@ -23,7 +26,7 @@
 	&.r-270::before {
 		transform: rotate(270deg);
 	}
-	&.ship-1 {
+	&.miner {
 		height: $cellSize;
 		width: $cellSize;
 		&::before {
@@ -32,7 +35,7 @@
 			background: url('/assets/imgs/ship-1.png') 0 0 no-repeat;
 		}
 	}
-	&.ship-2 {
+	&.explorer {
 		height: $cellSize * 2;
 		width: $cellSize;
 		&::before {
@@ -49,7 +52,7 @@
 			}
 		}
 	}
-	&.ship-3 {
+	&.assault {
 		height: $cellSize * 3;
 		width: $cellSize;
 		&::before {
@@ -63,6 +66,23 @@
 				width: $cellSize;
 				top: -$cellSize;
 				left: $cellSize;
+			}
+		}
+	}
+	&.mothership {
+		height: $cellSize * 4;
+		width: $cellSize;
+		&::before {
+			background: url('/assets/imgs/ship-4.png') 0 0 no-repeat;
+		}
+		&.r-90, &.r-270{
+			width: $cellSize * 4;
+			height: $cellSize;
+			&::before {
+				height: $cellSize * 4;
+				width: $cellSize;
+				top: -($cellSize + $cellSize2);
+				left: ($cellSize + $cellSize2);
 			}
 		}
 	}

@@ -4,16 +4,19 @@ import { Miner } from './miner';
 import { DOMCoord } from './dom-coord';
 import { Explorer } from './explorer';
 import { AssaultShip } from './assault-ship';
+import { Mothership } from './mothership';
 
 export class ShipFactory {
 	static create(type:ShipType, position:DOMCoord, orientation = 0): Ship{
 		switch(type){
-			case '1':
+			case 'miner':
 				return new Miner(position, orientation);
-			case '2':
+			case 'explorer':
 				return new Explorer(position, orientation);
-			case '3':
+			case 'assault':
 				return new AssaultShip(position, orientation);
+			case 'mothership':
+				return new Mothership(position, orientation);
 		}
 	}
 }

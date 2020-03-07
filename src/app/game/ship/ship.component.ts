@@ -13,6 +13,7 @@ export class ShipComponent implements OnInit {
 	@ViewChild('shipDrag',{static: true}) shipDrag:CdkDrag;
 
 	lastDragging = false;
+	dragStart = false;
 
 	constructor() { }
 

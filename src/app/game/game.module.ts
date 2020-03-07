@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { MatButtonModule, MatIconModule } from "@angular/material";
 
 import { BoardComponent } from './board/board.component';
 import { ActionBoardComponent } from './action-board/action-board.component';
@@ -19,7 +20,9 @@ import { ShipComponent } from './ship/ship.component';
 	],
 	imports: [
 		CommonModule,
-		DragDropModule
+		DragDropModule,
+		MatButtonModule,
+		MatIconModule
 	],
 	exports: [
 		BoardComponent

@@ -17,4 +17,4 @@ export class ShipBase {
 	}
 }
 
-export type ShipType = '1'|'2'|'3'|'4';
+export type ShipType = 'miner'|'explorer'|'assault'|'mothership';

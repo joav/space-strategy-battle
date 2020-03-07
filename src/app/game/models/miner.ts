@@ -6,7 +6,7 @@ import { DOMCoordToCell } from '../functions';
 
 export class Miner extends ShipBase implements Ship {
 	constructor(position:DOMCoord, orientation = 0){
-		super(1, '1', position, orientation);
+		super(1, 'miner', position, orientation);
 	}
 
 	canRotate() {
