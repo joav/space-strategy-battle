@@ -1,0 +1,17 @@
+<div class="home">
+	<div class="container">
+		<div class="user-name" *ngIf="player?.saved == false; else select">
+			<form (ngSubmit)="savePlayer()">
+				<mat-form-field>
+					<input matInput placeholder="Nombre del jugador" [formControl]="playerName">
+				</mat-form-field>
+				<button mat-raised-button color="primary">Guardar</button>
+			</form>
+		</div>
+		<ng-template #select>
+			<span class="user">
+				{{player.name}}
+			</span>
+		</ng-template>
+	</div>
+</div>
