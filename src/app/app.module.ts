@@ -6,15 +6,21 @@ import { AppComponent } from './app.component';;
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameModule } from './game/game.module';
 import { HomeComponent } from './home/home.component';
-import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSidenavModule, MatListModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSidenavModule, MatListModule, MatIconModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { ActivesComponent } from './actives/actives.component';
+import { ModesComponent } from './modes/modes.component';
+import { BoardsComponent } from './boards/boards.component';
 
 @NgModule({
   declarations: [
 	AppComponent,
 	HomeComponent,
-	HeaderComponent
+	HeaderComponent,
+	ActivesComponent,
+	ModesComponent,
+	BoardsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,8 @@ import { HeaderComponent } from './header/header.component';
 	MatInputModule,
 	MatSidenavModule,
 	MatListModule,
-	MatIconModule
+	MatIconModule,
+	MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

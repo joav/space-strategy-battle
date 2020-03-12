@@ -1,0 +1,15 @@
+.item {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted black;
+	padding-bottom: 5px;
+	&:last-child {
+		border: 0;
+	}
+	&.notification {
+		background-color: #f443365d;
+	}
+}

@@ -1,0 +1,5 @@
+<h3>Desafíos activos</h3>
+<div class="item" *ngFor="let active of actives" [class.notification]="active.canPlay">
+	<span>{{active.player1.name}} vs {{active.player2.name}} - {{active.creation_date | date}}</span>
+	<button mat-raised-button color="primary">{{active.canPlay?'Continuar':active.player2.name + ' jugando'}}</button>
+</div>

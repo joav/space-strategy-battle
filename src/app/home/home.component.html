@@ -13,19 +13,17 @@
 		<mat-sidenav-container>
 			<mat-sidenav mode="side" opened>
 				<mat-list>
-					<mat-list-item><mat-icon>flash_on</mat-icon>Desafíos activos</mat-list-item>
-					<mat-list-item><mat-icon>layers</mat-icon>Tus Tableros</mat-list-item>
+					<mat-list-item routerLink="/"><mat-icon>add_circle_outline</mat-icon>Nuevo juego</mat-list-item>
+					<mat-list-item routerLink="/desafios-activos" routerLinkActive="active"><mat-icon>flash_on</mat-icon><span>Desafíos activos</span><span color="warn" class="number">{{notifications.total() | async}}</span></mat-list-item>
+					<mat-list-item routerLink="/tableros" routerLinkActive="active"><mat-icon>layers</mat-icon>Tus Tableros</mat-list-item>
 					<mat-list-item><mat-icon>star</mat-icon>Copas</mat-list-item>
-					<mat-list-item><mat-icon>access_time</mat-icon>Juegos anteriores</mat-list-item>
+					<mat-list-item><mat-icon>access_time</mat-icon>Desafíos terminados</mat-list-item>
 				</mat-list>
 			</mat-sidenav>
 			<mat-sidenav-content>
 				<div class="container">
 					<h2 class="name">{{player.name}}</h2>
-					<div class="modes">
-						<button mat-raised-button color="primary">Modo<br>historia</button>
-						<button mat-raised-button color="warn">Desafiar a<br>otro jugador</button>
-					</div>
+					<router-outlet ></router-outlet>
 				</div>
 			</mat-sidenav-content>
 		</mat-sidenav-container>

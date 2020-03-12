@@ -10,7 +10,7 @@ export class PlayerService {
 	constructor(){
 		this._player = {
 			name: 'Player #'+(Math.floor(Math.random() * 1000)),
-			saved: false
+			saved: true
 		};
 	}
 	get player(){
