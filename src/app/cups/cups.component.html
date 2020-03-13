@@ -1,0 +1,7 @@
+<div class="cups">
+	<div class="cup mat-elevation-z2" *ngFor="let cup of cups">
+		<mat-icon class="cup-icon" fontIcon="fa-{{cup.icon}}" fontSet="fas"></mat-icon>
+		<span>{{cup.name}}</span>
+		<span>{{cup.obtained | date}}</span>
+	</div>
+</div>

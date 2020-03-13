@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ActivesComponent } from './actives/actives.component';
 import { ModesComponent } from './modes/modes.component';
 import { BoardsComponent } from './boards/boards.component';
+import { CupsComponent } from './cups/cups.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
 			{
 				path: 'tableros',
 				component: BoardsComponent
+			},
+			{
+				path: 'copas',
+				component: CupsComponent
 			}
 		]
 	},

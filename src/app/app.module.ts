@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { ActivesComponent } from './actives/actives.component';
 import { ModesComponent } from './modes/modes.component';
 import { BoardsComponent } from './boards/boards.component';
+import { CupsComponent } from './cups/cups.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BoardsComponent } from './boards/boards.component';
 	HeaderComponent,
 	ActivesComponent,
 	ModesComponent,
-	BoardsComponent
+	BoardsComponent,
+	CupsComponent
   ],
   imports: [
     BrowserModule,
