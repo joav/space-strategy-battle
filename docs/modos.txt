@@ -1,0 +1,12 @@
+modos
+    historia
+        Antes de la invasión
+            Campañas
+                Batallas
+        Durante la invasión
+            Campañas
+                Batallas
+        Un nuevo comienzo
+            Campañas
+                Batallas
+    J v J

@@ -1,0 +1,46 @@
+DB Local  |  Firetore
+-----------------------
+Historias |  Historias
+Campañas  |  Campañas
+Batallas  |    - Batallas
+Jugador   |  Jugadores
+Copas     |    - Copas
+			   - Batallas
+
+
+Historias
+    nombre
+    campañas
+
+Campaña
+    nombre
+    introducción
+    batallas
+
+Batalla
+    nombre
+    introducción
+    dificultad
+    tablero
+    nombre-IA
+	copa
+
+Copa
+	nombre
+	icono
+
+Tablero
+    naves
+    fondo
+
+Jugador
+    nombre
+    campañas
+    copas
+    desafíos
+    tableros
+
+IA
+    nombre
+    nivel-inteligencia
+

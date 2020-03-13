@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';;
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +15,8 @@ import { ActivesComponent } from './actives/actives.component';
 import { ModesComponent } from './modes/modes.component';
 import { BoardsComponent } from './boards/boards.component';
 import { CupsComponent } from './cups/cups.component';
+// import { dbConfig } from "./db.config";
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { CupsComponent } from './cups/cups.component';
 	MatSidenavModule,
 	MatListModule,
 	MatIconModule,
-	MatCardModule
+	MatCardModule,
+	// NgxIndexedDBModule.forRoot(dbConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
