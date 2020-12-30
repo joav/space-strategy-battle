@@ -1,0 +1,65 @@
+footer {
+	position: fixed;
+	bottom: 0px;
+	overflow: hidden;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@media screen and (min-width: 768px){
+		display: none;
+	}
+}
+
+.submenu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	div {
+		text-align: center;
+		display: block;
+		width: 100%;
+		mat-icon {
+			margin: 0;
+		}
+	}
+}
+
+.toolbar-icon {
+	line-height: 0; // Set to zero or will affect spacing between icon and text
+}
+
+.toolbar-icon-text {
+	line-height: 1.8; // Proper spacing between icon and text
+	font-size: 70%; // Smaller text size for proper display under icon
+}
+
+.active-menu-item {
+	background-color: #ffffff66;
+}
+
+.active-submenu-item {
+	background-color: #66666666;
+}
+
+.number {
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-radius: 100%;
+	background-color: #f44336;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	color: white;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}

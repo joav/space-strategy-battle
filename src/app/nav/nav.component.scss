@@ -1,0 +1,24 @@
+mat-list-item {
+	cursor: pointer;
+	outline: none;
+	transition: all .5s;
+	&:hover {
+		background-color: #e2e1e1;
+	}
+	&.active{
+		background-color: #cccaca;
+	}
+	.number {
+		position: absolute;
+		right: 0;
+		top: 0;
+		border-radius: 100%;
+		background-color: #f44336;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 25px;
+		height: 25px;
+		color: white;
+	}
+}

@@ -1,58 +1,39 @@
 .home{
 	width: 100%;
-	form {
-		padding: 50px;
-		width: 100%;
+	.user-name-form {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		form {
+			min-height: 300px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			p.hint {
+				margin-bottom: 15px;
+			}
+			input {
+				margin-left: 10px;
+			}
+			button {
+				display: inline-block;
+				margin-left: 5px;
+			}
+		}
 	}
 	mat-sidenav {
 		display: none;
-	}
-	mat-list-item {
-		cursor: pointer;
-		outline: none;
-		transition: all .5s;
-		&:hover {
-			background-color: #e2e1e1;
-		}
-		&.active{
-			background-color: #cccaca;
-		}
-		.number {
-			position: absolute;
-			right: 0;
-			top: 0;
-			border-radius: 100%;
-			background-color: #f44336;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 25px;
-			height: 25px;
-			color: white;
-		}
 	}
 	@media screen and (min-width: 768px){
 		mat-sidenav {
 			display: block;
 		}
-		.user-name-form {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			form {
-				min-height: 300px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				input {
-					margin-left: 10px;
-				}
-			}
+		mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+			height: calc(100vh - 64px);
 		}
 		mat-sidenav-container {
-			height: calc(100vh - 64px);
 			.container {
 				width: 80%;
 				margin: auto;

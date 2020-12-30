@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { NotificationService } from '../services/notification.service';
 import { Player } from '../models/player';
 import { PlayerService } from '../player.service';
-import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { NotificationService } from '../services/notification.service';
 
 @Component({
 	selector: 'app-home',
@@ -11,7 +12,11 @@ import { NotificationService } from '../services/notification.service';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-	playerName:FormControl = new FormControl('');
+	playerName:FormControl = new FormControl('', [Validators.required]);
+	username:FormControl;
+	password:FormControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
+	repassword:FormControl = new FormControl('', [Validators.required, (ctrl: AbstractControl) => ctrl.value !== this.password.value?{equalTo: true}:null]);
+	register = false;
 
 	player:Player;
 
@@ -20,14 +25,43 @@ export class HomeComponent implements OnInit {
 			this.player = player;
 			this.playerName.setValue(player.name);
 		});
+		this.username = new FormControl(
+			'',
+			[
+				Validators.required,
+				(ctrl: AbstractControl) => /^[a-z0-9_\.\-]+$/igm.test(ctrl.value)?null:{pattern: true}
+			],
+			[
+				(ctrl: AbstractControl) => playerServ.checkUserName(ctrl.value).pipe(
+					map(valid => valid || !this.register?null:{inUse: true})
+				)
+			]
+		);
 	}
 
 	ngOnInit(): void { }
 
 	savePlayer(){
-		this.playerServ.saveName(this.playerName.value).subscribe(p => {
-			this.player = p;
-			this.router.navigate(['/']);
-		});
+		if(this.username.valid && this.password.valid){
+			if(this.register && this.playerName.valid && this.repassword.valid){
+				this.playerServ.createPlayer({
+					name: this.playerName.value,
+					username: this.username.value,
+					password: this.password.value
+				}).subscribe(player => {
+					this.player = player;
+				}, e => console.log('Error', e));
+			}else{
+				this.playerServ.checkPlayer({
+					name: this.username.value,
+					username: this.username.value,
+					password: this.password.value
+				}).subscribe(p => this.player = p);
+			}
+		}
+	}
+
+	logout(){
+		this.playerServ.logout();
 	}
 }

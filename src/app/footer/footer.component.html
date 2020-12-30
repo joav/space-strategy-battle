@@ -1,0 +1,64 @@
+<footer class="footer">
+	<mat-toolbar class="footer" color="primary">
+		<div class="menu">
+			<button mat-button routerLink="/" routerLinkActive="active-menu-item" [routerLinkActiveOptions]="{exact: true}">
+				<div class="toolbar-icon">
+					<mat-icon>add_circle_outline</mat-icon>
+				</div>
+				<div class="toolbar-icon-text">
+					Nuevo juego
+				</div>
+			</button>
+			<button mat-button routerLink="/desafios-activos" routerLinkActive="active-menu-item">
+				<div class="toolbar-icon">
+					<mat-icon>flash_on</mat-icon>
+				</div>
+				<div class="toolbar-icon-text">
+					<span>Desafíos activos</span><span *ngIf="notifications != 0" color="warn" class="number">{{notifications}}</span>
+				</div>
+			</button>
+			<button mat-button routerLink="/tableros" routerLinkActive="active-menu-item">
+				<div class="toolbar-icon">
+					<mat-icon>layers</mat-icon>
+				</div>
+				<div class="toolbar-icon-text">
+					Tus Tableros
+				</div>
+			</button>
+			<button mat-button [matMenuTriggerFor]="menu">
+				<div class="toolbar-icon">
+					<mat-icon>more_horiz</mat-icon>
+				</div>
+				<div class="toolbar-icon-text">
+					<span>Más</span>
+				</div>
+			</button>
+			<mat-menu #menu="matMenu" class="submenu">
+				<button class="submenu" mat-menu-item routerLink="/copas" routerLinkActive="active-submenu-item">
+					<div class="toolbar-icon">
+						<mat-icon>star</mat-icon>
+					</div>
+					<div class="toolbar-icon-text">
+						Copas
+					</div>
+				</button>
+				<button class="submenu" mat-menu-item>
+					<div class="toolbar-icon">
+						<mat-icon>access_time</mat-icon>
+					</div>
+					<div class="toolbar-icon-text">
+						Desafíos terminados
+					</div>
+				</button>
+				<button class="submenu" mat-menu-item (click)="logout.emit()">
+					<div class="toolbar-icon">
+						<mat-icon>exit_to_app</mat-icon>
+					</div>
+					<div class="toolbar-icon-text">
+						Cerrar sesión
+					</div>
+				</button>
+			</mat-menu>
+		</div>
+	</mat-toolbar>
+</footer>

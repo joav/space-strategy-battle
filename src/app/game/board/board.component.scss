@@ -9,6 +9,9 @@
 	}
 	game-ship-board {
 		position: relative;
+		&::ng-deep .ship {
+			cursor: pointer;
+		}
 	}
 	button {
 		margin: 10px;

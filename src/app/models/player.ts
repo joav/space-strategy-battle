@@ -1,4 +1,7 @@
 export interface Player{
-	name:string;
-	saved?:boolean;
+	id?: string;
+	name: string;
+	username?: string;
+	password?: string;
+	saved?: boolean;
 }

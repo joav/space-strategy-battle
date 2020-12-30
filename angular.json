@@ -28,10 +28,12 @@
               "src/assets"
             ],
             "styles": [
-			  "src/styles.scss",
-			  "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
-            "scripts": ["node_modules/@fortawesome/fontawesome-free/js/all.js"]
+            "scripts": [
+              "node_modules/@fortawesome/fontawesome-free/js/all.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,8 +125,13 @@
               "devServerTarget": "space-strategy-battle:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "space-strategy-battle"
 }
